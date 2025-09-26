@@ -369,3 +369,25 @@ function toast(text){
 }
 
 init();
+
+const loginModal = document.getElementById('loginModal');
+const accountBtn = document.getElementById('accountBtn');
+const closeLogin = document.getElementById('closeLogin');
+const cancelLogin = document.getElementById('cancelLogin');
+const loginForm = document.getElementById('loginForm');
+
+accountBtn.addEventListener('click', ()=> showModal(loginModal));
+closeLogin.addEventListener('click', ()=> closeModal(loginModal));
+cancelLogin.addEventListener('click', ()=> closeModal(loginModal));
+
+loginForm.addEventListener('submit', async (e)=>{
+  e.preventDefault();
+  const formData = new FormData(loginForm);
+  const response = await fetch('login.php', {
+    method: 'POST',
+    body: formData
+  });
+  const result = await response.text();
+  toast(result);
+  closeModal(loginModal);
+});
