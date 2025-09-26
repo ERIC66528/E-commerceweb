@@ -178,6 +178,25 @@
       </div>
       <div class="footer-bottom">© <span id="year"></span> Rictei Shop. All rights reserved.</div>
     </footer>
+
+    <div id="loginModal" class="modal" hidden>
+  <div class="modal-content small">
+    <button id="closeLogin" class="icon-btn modal-close">✕</button>
+    <h3>Sign In</h3>
+    <form id="loginForm" method="POST">
+      <div class="form-grid">
+        <label>Email<input type="email" name="email" required></label>
+        <label>Password<input type="password" name="password" required></label>
+      </div>
+      <div class="form-actions">
+        <button type="submit" class="btn primary">Login</button>
+        <button type="button" id="cancelLogin" class="btn">Cancel</button>
+      </div>
+    </form>
+  </div>
+    </div>
+
+    
   </main>
 
   <script src="app.js" defer></script>
